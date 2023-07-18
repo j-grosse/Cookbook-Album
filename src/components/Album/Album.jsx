@@ -18,6 +18,7 @@ import MealCard from './MealCard';
 import ViewCardContent from './ViewCardContent';
 import { useState, useEffect } from 'react';
 import client from '../../util/Client'; // contentful client
+// import heroImage from '../../assets/laap.jpg';
 
 // //////////////////////////////////////////////////////////////// //
 
@@ -65,6 +66,9 @@ export default function Album(apiDataProp) {
           className="hero-image"
           sx={{
             bgcolor: 'background.paper',
+            // backgroundImage: `url(${heroImage})`,
+            // backgroundRepeat: 'no-repeat',
+            // backgroundSize: 'cover',
             pt: 8,
             pb: 6,
           }}
