@@ -13,12 +13,11 @@ import Link from '@mui/material/Link';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SearchAppBar from './SearchAppBar';
 
-// import MediaCover from './MediaCover';
 import MealCard from './MealCard';
 import ViewCardContent from './ViewCardContent';
 import { useState, useEffect } from 'react';
 import client from '../../util/Client'; // contentful client
-// import heroImage from '../../assets/laap.jpg';
+import heroImage from '/laap.jpg';
 
 // //////////////////////////////////////////////////////////////// //
 
@@ -57,7 +56,6 @@ export default function Album(apiDataProp) {
   return !selectedCard ? (
     <ThemeProvider theme={defaultTheme}>
       <CssBaseline />
-      {/* <MediaCover /> */}
       <SearchAppBar />
 
       <main>
@@ -66,9 +64,9 @@ export default function Album(apiDataProp) {
           className="hero-image"
           sx={{
             bgcolor: 'background.paper',
-            // backgroundImage: `url(${heroImage})`,
-            // backgroundRepeat: 'no-repeat',
-            // backgroundSize: 'cover',
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(${heroImage})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
             pt: 8,
             pb: 6,
           }}
