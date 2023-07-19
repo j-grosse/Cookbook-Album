@@ -1,12 +1,11 @@
 import React from 'react';
-import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
-import theme from './CustomColorTheme';
+import { useTheme } from '@mui/material/styles'; // Theme hook
 
 export default function MealCard({
   id,
@@ -16,16 +15,20 @@ export default function MealCard({
   recipeText,
   setSelectedCard,
 }) {
+  const theme = useTheme();
+
   return (
     <div key={id}>
-      <Card 
+      <Card
         sx={{
-          background: theme.palette.secondary.main,
+          background: theme.palette.background.paper,
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
           borderRadius: '10px',
           boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)',
+          bgcolor: 'whitesmoke',
+          ':hover': {bgcolor: 'white'},
         }}
       >
         <CardMedia
@@ -36,17 +39,18 @@ export default function MealCard({
           }}
           image={imgUrl}
         />
-        {console.log(imgUrl)}
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography gutterBottom variant="h5" component="h2">
             {title}
           </Typography>
-          <Typography gutterBottom variant="h7" component="h2">
+          <Typography gutterBottom variant="h6" component="h2">
             by {author}
           </Typography>
         </CardContent>
         <CardActions>
           <Button
+            sx={{ color: 'primary.main', bgcolor: 'whitesmoke', ':hover': {bgcolor: 'white'}, 
+            }}
             size="small"
             onClick={() =>
               setSelectedCard({ id, title, author, imgUrl, recipeText })
