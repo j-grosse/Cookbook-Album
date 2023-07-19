@@ -7,12 +7,12 @@ const Text = ({ children }) => <p className="align-center">{children}</p>;
 
 const options = {
   renderMark: {
-    [MARKS.BOLD]: text => <Bold>{text}</Bold>,
+    [MARKS.BOLD]: (text) => <Bold>{text}</Bold>,
   },
   renderNode: {
     [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
   },
-  renderText: text => text.replace('!', '?'),
+  renderText: (text) => text.replace('!', '?'),
 };
 import React from 'react';
 

@@ -6,6 +6,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import theme from './CustomColorTheme';
 
 export default function MealCard({
   id,
@@ -17,11 +18,14 @@ export default function MealCard({
 }) {
   return (
     <div key={id}>
-      <Card
+      <Card 
         sx={{
+          background: theme.palette.secondary.main,
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
+          borderRadius: '10px',
+          boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)',
         }}
       >
         <CardMedia

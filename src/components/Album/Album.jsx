@@ -18,7 +18,7 @@ import ViewCardContent from './ViewCardContent';
 import { useState, useEffect } from 'react';
 import client from '../../util/Client'; // contentful client
 import heroImage from '/laap.jpg';
-
+import CustomColorTheme from './CustomColorTheme';
 // //////////////////////////////////////////////////////////////// //
 
 function Copyright() {
@@ -36,7 +36,8 @@ function Copyright() {
 
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const defaultTheme = createTheme();
+const customTheme = CustomColorTheme;
+// const customTheme = createTheme();
 
 // /////////////////////////////////////////////////////////////// //
 
@@ -54,17 +55,17 @@ export default function Album(apiDataProp) {
   // /////////////////////////////////////////////////////////////// //
 
   return !selectedCard ? (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={customTheme}>
       <CssBaseline />
       <SearchAppBar />
 
       <main>
         {/* Hero unit */}
         <Box
-          className="hero-image"
           sx={{
             bgcolor: 'background.paper',
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(${heroImage})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${heroImage})`,
+            backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover',
             pt: 8,
@@ -140,7 +141,7 @@ export default function Album(apiDataProp) {
       {/* End footer */}
     </ThemeProvider>
   ) : (
-    <ThemeProvider theme={defaultTheme}>
+    <ThemeProvider theme={customTheme}>
       <CssBaseline />
 
       {/* <MediaCover /> */}
@@ -160,12 +161,13 @@ export default function Album(apiDataProp) {
         {/* Hero unit */}
         <Box
           sx={{
-            bgcolor: 'background.paper',
+            bgcolor: 'secondary.main',
             pt: 8,
             pb: 6,
+
           }}
         >
-          <Container maxWidth="sm">
+          <Container maxWidth="md">
             {selectedCard && (
               <ViewCardContent
                 id={selectedCard.id}
