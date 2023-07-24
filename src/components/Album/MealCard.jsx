@@ -22,13 +22,13 @@ export default function MealCard({
       <Card
         sx={{
           background: theme.palette.background.paper,
-          height: '100%',
           display: 'flex',
           flexDirection: 'column',
           borderRadius: '10px',
           boxShadow: '0 4px 10px rgba(0, 0, 0, 0.4)',
           bgcolor: 'whitesmoke',
-          ':hover': {bgcolor: 'white'},
+          ':hover': { bgcolor: 'white' },
+          height: '100%',
         }}
       >
         <CardMedia
@@ -49,7 +49,10 @@ export default function MealCard({
         </CardContent>
         <CardActions>
           <Button
-            sx={{ color: 'primary.main', bgcolor: 'whitesmoke', ':hover': {bgcolor: 'white'}, 
+            sx={{
+              color: 'primary.main',
+              bgcolor: 'whitesmoke',
+              ':hover': { bgcolor: 'white' },
             }}
             size="small"
             onClick={() =>

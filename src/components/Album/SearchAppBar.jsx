@@ -60,7 +60,7 @@ export default function SearchAppBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ bgcolor: 'primary.main' }}>
-        <Toolbar>
+        <Toolbar className="shadow-md" >
           <IconButton
             size="large"
             edge="start"
@@ -92,7 +92,7 @@ export default function SearchAppBar() {
               CookLog
             </Link>
           </Typography>
-          <Search>
+          <Search className="shadow-md" >
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>

@@ -28,6 +28,7 @@ const RenderRecipe = ({ id, title, author, imgUrl, recipeText }) => {
           by {author}
           <CardMedia
             component="div"
+            className="shadow-2xl"
             sx={{
               // 16:9
               pt: '56.25%',
@@ -36,13 +37,14 @@ const RenderRecipe = ({ id, title, author, imgUrl, recipeText }) => {
             image={imgUrl}
           />
           {console.log(imgUrl)}
-          <pre style={{ textAlign: 'left', color: 'black' }}>
-            <CardContent sx={{ flexGrow: 1 }}>
-              <Typography>
-                <RichText document={recipeText} />
-              </Typography>
-            </CardContent>
-          </pre>
+          <CardContent
+            className="shadow-2xl"
+            sx={{ flexGrow: 1, whiteSpace: 'pre-wrap', borderRadius: '10px' }}
+          >
+            <Typography>
+              <RichText document={recipeText} />
+            </Typography>
+          </CardContent>
         </Card>
       </Container>
     </>
